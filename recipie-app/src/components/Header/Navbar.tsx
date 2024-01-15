@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import logo from '../../assets/logo.png';
 import hmaburger from '../../assets/Vector (2).png';
 import closeHamburger from '../../assets/icons8-multiply-32.png'
+import icon from '../../assets/Icon.png'
 interface NavLink {
   name: string;
   link: string;
@@ -27,7 +28,7 @@ const Navbar: React.FC = () => {
       </div>
       <nav className='w-full h-full bg-white flex justify-between px-4 md:px-4 my-4'>
         <div className='flex justify-between text-2xl font-bold items-center'>
-          <img className='m-4' src={logo} alt="" />
+          <img className='m-4 w-9' src={logo} alt="" />
           <span className='md:flex hidden'>Delícias à Mesa</span>
         </div>
         <ul className='md:flex hidden font-semibold '>
@@ -38,12 +39,13 @@ const Navbar: React.FC = () => {
           ))}
         </ul>
 
-        <div>
-          <input className='m-4' type="text" />
+        <div className='md:flex hidden font-semibold  border-spacing-2 rounded-3xlBackground  bg-stone-100 rounded-3xl'>
+          <img className=' m-5 w-4' src={icon} alt="" />
+          <input className=' m-5 w-40  bg-stone-100 text-slate-700' type="text"  placeholder='Search Recipe'/>
         </div>
 
         {showMenu && (
-          <div className="fixed inset-x-0 top-24 mx-8 flex flex-col items-center rounded-xl  bg-stone-800 text-black md:hidden">
+          <div className=" flex flex-col items-center rounded-xl  bg-stone-800 text-black md:hidden">
             <section className="my-8 flex flex-col items-center gap-6">
               {navLinks.map((link) => (
                 <li key={link.name}>
@@ -60,7 +62,7 @@ const Navbar: React.FC = () => {
         )}
 
         <div className='md:hidden'>
-          <button className='' onClick={toggleNavbar}>
+          <button className='m-5' onClick={toggleNavbar}>
             {showMenu ? (
               <img src={closeHamburger} alt="" />
             ) : (
