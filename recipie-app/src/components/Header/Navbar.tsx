@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, } from 'react';
 import logo from '../../assets/logo.png';
 import hmaburger from '../../assets/Vector (2).png';
 import closeHamburger from '../../assets/icons8-multiply-32.png'
-import icon from '../../assets/Icon.png'
+
+import Search from '../../pages/Search';
+
 interface NavLink {
   name: string;
   link: string;
 }
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC= () => {
+
+ 
+
+
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleNavbar = () => {
@@ -16,10 +22,10 @@ const Navbar: React.FC = () => {
   };
 
   const navLinks: NavLink[] = [
-  { name: "Home", link: "/home" },
-  { name: "About", link: "/about" },
-  { name: "Contact", link: "/contact" },
-];
+    { name: "Home", link: "/home" },
+    { name: "About", link: "/about" },
+    { name: "Contact", link: "/contact" },
+  ];
 
   return (
     <div>
@@ -27,7 +33,7 @@ const Navbar: React.FC = () => {
         <div className='text-2'>.</div>
       </div>
       <nav className='w-full h-full bg-white flex justify-between px-4 md:px-4 my-4'>
-        <div className='flex justify-between text-2xl font-bold items-center'>
+        <div className='flex justify-between text-xl font-bold items-center'>
           <img className='m-4 w-9' src={logo} alt="" />
           <span className='md:flex hidden'>Delícias à Mesa</span>
         </div>
@@ -40,15 +46,14 @@ const Navbar: React.FC = () => {
         </ul>
 
         <div className='md:flex hidden font-semibold  border-spacing-2 rounded-3xlBackground  bg-stone-100 rounded-3xl'>
-          <img className=' m-5 w-4' src={icon} alt="" />
-          <input className=' m-5 w-40  bg-stone-100 text-slate-700' type="text"  placeholder='Search Recipe'/>
+        <Search />
         </div>
 
         {showMenu && (
-          <div className=" flex flex-col items-center rounded-xl  bg-stone-800 text-black md:hidden">
-            <section className="my-8 flex flex-col items-center gap-6">
+          <div className=" flex flex-col items-center  md:hidden">
+            <section className="my-8 flex flex-col items-center gap-6 ">
               {navLinks.map((link) => (
-                <li key={link.name}>
+                <li className='list-none' key={link.name}>
                   <a className="hover:opacity-70" href={link.link}>
                     {link.name}
                   </a>
@@ -57,7 +62,10 @@ const Navbar: React.FC = () => {
             </section>
             <hr className="mx-auto w-[80%] border-gray-600" />
 
-            <section className="flex flex-col gap-6 items-center w-full py-6"></section>
+            <section className="flex flex-col gap-6 items-center w-full py-6">
+
+<Search />
+            </section>
           </div>
         )}
 

@@ -14,6 +14,10 @@ function App() {
         <Route path='/slice:/idCategory:strCategory/:strCategoryThumb' element={<SlicePage />} /><Route path="/slice/:idCategory/:strCategory/:strCategoryThumb" element={<SlicePage />} />
 
       </Routes>
+
+
+
+    
     </div>
   );
 }
