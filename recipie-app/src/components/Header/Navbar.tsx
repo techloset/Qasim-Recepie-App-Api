@@ -1,18 +1,24 @@
 import React, { useState, } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import hmaburger from '../../assets/Vector (2).png';
 import closeHamburger from '../../assets/icons8-multiply-32.png'
 
-import Search from '../../pages/Search';
-
+import icon from '../../assets/Icon.png'
 interface NavLink {
   name: string;
   link: string;
 }
 
-const Navbar: React.FC= () => {
+const Navbar: React.FC = () => {
 
- 
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    // Navigate to the dynamic search results page with the search query
+    navigate(`/search/${encodeURIComponent(searchQuery)}`);
+  };
 
 
   const [showMenu, setShowMenu] = useState(false);
@@ -32,9 +38,9 @@ const Navbar: React.FC= () => {
       <div className='box bg-yellow-400 w-sm-[360px] h-full md:px-4'>
         <div className='text-2'>.</div>
       </div>
-      <nav className='w-full h-full bg-white flex justify-between px-4 md:px-4 my-4'>
+      <nav className='w-full h-full bg-white flex justify-between px-5 md:px-4 my-4'>
         <div className='flex justify-between text-xl font-bold items-center'>
-          <img className='m-4 w-9' src={logo} alt="" />
+          <img className='m-3 w-9' src={logo} alt="" />
           <span className='md:flex hidden'>Delícias à Mesa</span>
         </div>
         <ul className='md:flex hidden font-semibold '>
@@ -45,8 +51,12 @@ const Navbar: React.FC= () => {
           ))}
         </ul>
 
-        <div className='md:flex hidden font-semibold  border-spacing-2 rounded-3xlBackground  bg-stone-100 rounded-3xl'>
-        <Search />
+        <div className='md:flex hidden font-semibold  border-spacing-1 h-11 rounded-full   bg-stone-100 rounded-1xl'>
+          <button onClick={handleSearch}><img className='m-2' src={icon} alt="" /></button>
+          <input className=' m-2 h-7 rounded-full' type="text"
+            placeholder="Search recipes"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)} />
         </div>
 
         {showMenu && (
@@ -64,7 +74,7 @@ const Navbar: React.FC= () => {
 
             <section className="flex flex-col gap-6 items-center w-full py-6">
 
-<Search />
+
             </section>
           </div>
         )}
