@@ -8,7 +8,7 @@ import browseIcon from '../../assets/Browser.png';
 const Footer = () => {
     return (
         <>
-            <footer className='bg-yellow-300 '>
+            <footer className='bg-yellow-300   '>
                 <div className='container px-5 py-8 mx-auto flex justify-around items-center sm:flex-row flex-col'>
                     <div className='flex flex-row'>
                         <img className='w-10 m-3' src={logo} alt="" />

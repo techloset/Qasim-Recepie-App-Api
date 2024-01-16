@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Navbar from '../components/Header/Navbar';
+
 
 
 const SlicePage: React.FC = () => {
@@ -8,7 +8,7 @@ const SlicePage: React.FC = () => {
 
   return (
     <div className='app'>
-      <Navbar />
+      
       <div>
       <div
         className="relative overflow-hidden rounded-sm bg-cover bg-no-repeat p-12 text-center"

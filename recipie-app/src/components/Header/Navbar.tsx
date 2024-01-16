@@ -52,12 +52,15 @@ const Navbar: React.FC = () => {
         </ul>
 
         <div className='md:flex hidden font-semibold  border-spacing-1 h-11 rounded-full   bg-stone-100 rounded-1xl'>
-          <button onClick={handleSearch}><img className='m-2' src={icon} alt="" /></button>
-          <input className=' m-2 h-7 rounded-full' type="text"
-            placeholder="Search recipes"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)} />
+          <form className='flex flex-row m-0' onSubmit={handleSearch} >
+            <button ><img className='m-2' src={icon} alt="" /></button>
+            <input className=' m-2 h-7 rounded-full p-3 text-center border-yellow-300' type="text"
+              placeholder="Search recipes"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)} />
+          </form>
         </div>
+
 
         {showMenu && (
           <div className=" flex flex-col items-center  md:hidden">
@@ -73,6 +76,15 @@ const Navbar: React.FC = () => {
             <hr className="mx-auto w-[80%] border-gray-600" />
 
             <section className="flex flex-col gap-6 items-center w-full py-6">
+              <div className=' font-semibold  border-spacing-1 h-11 rounded-full   bg-stone-100 rounded-1xl'>
+                <form className='flex flex-row m-0' onSubmit={handleSearch} >
+                  <button ><img className='m-2' src={icon} alt="" /></button>
+                  <input className=' m-2 h-7 rounded-full p-3 text-center border-yellow-300' type="text"
+                    placeholder="Search recipes"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)} />
+                </form>
+              </div>
 
 
             </section>
