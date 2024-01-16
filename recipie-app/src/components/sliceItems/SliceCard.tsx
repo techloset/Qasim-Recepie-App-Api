@@ -31,7 +31,7 @@ const SliceCard: React.FC = () => {
   return (
     <div className="py-9">
       <div className="m-12"> <h1 className="text-center text-wrap text-3xl font-semibold">Popular Recipes</h1></div>
-     <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 my-4">
+     <div className="container grid grid-cols-1 sm:grid-cols-2 md:m-5 md:grid-cols-3 lg:grid-cols-3 gap-8 my-4 place-content-center place-items-center	">
      
   {recipes.map((recipe) => (
     <div key={recipe.idCategory} className="p-2 rounded-full">
@@ -42,9 +42,9 @@ const SliceCard: React.FC = () => {
 
         <Link to={`/slice/${recipe.idCategory}/${encodeURIComponent(recipe.strCategory)}/${encodeURIComponent(recipe.strCategoryThumb)}`}>
           <img
-            className="lg:h-48 md:h-36 w-full object-cover object-center"
+            className="lg:h-48 md:h-36 w-full object-cover object-center md:w-48 lg:min-w-full"
             src={recipe.strCategoryThumb}
-            alt="blog"
+            alt="recipe.id"
             onClick={() => handleClick(recipe)}
           />
         </Link>
