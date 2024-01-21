@@ -18,7 +18,7 @@ const Banner: React.FC<BannerProps> = ({ imageUrl, title }) => {
         >
           <div className="flex h-full items-center justify-center">
             <div className="text-white ">
-              <h1 className="    text-white  font-bold font-['Inter'] lg:text-4xl md:text-2xl sm:text-3xl">
+              <h1 className="    text-white  font-bold font-['Inter'] lg:text-4xl md:text-3xl text-2xl">
                 {title}
               </h1>
             </div>
