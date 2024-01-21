@@ -1,23 +1,28 @@
 import React from 'react'
-import SliceCard from '../components/sliceItems/SliceCard'
 import Banner from '../components/Header/Banner'
 import imageUrl from '../../src/assets/ban.png'
+import SliceCard from "../components/homeCards/HomeCards"
+import RecentlyView from './RecentlyView'
 
-import AnotherPage from '../components/recentlyRecepies/RecentlyViews'
+
 
 
 const HomePage = () => {
   return (
-    <div className=''>
-     
+    <div className=' '>
+
 
 
       <Banner imageUrl={imageUrl} title="Get Inspired, Cook with passion and enjoy unforgettable moments at the table" />
+
       <SliceCard />
+      <RecentlyView />
+      
+    
 
-      <AnotherPage />
 
- 
+
+
     </div>
   )
 }

@@ -9,7 +9,7 @@ const Banner: React.FC<BannerProps> = ({ imageUrl, title }) => {
   return (
     <div>
       <div
-        className="relative overflow-hidden rounded-sm bg-cover bg-no-repeat p-12 text-center"
+        className="relative overflow-hidden rounded-sm bg-cover bg-no-repeat lg:p-12 text-center sm:p-4"
         style={{ backgroundImage: `url(${imageUrl})`, height: 400 }}
       >
         <div
@@ -17,8 +17,8 @@ const Banner: React.FC<BannerProps> = ({ imageUrl, title }) => {
           style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
         >
           <div className="flex h-full items-center justify-center">
-            <div className="text-white">
-              <h1 className="text-center w-97 text-white text-4xl font-bold font-['Inter']">
+            <div className="text-white ">
+              <h1 className="    text-white  font-bold font-['Inter'] lg:text-4xl md:text-2xl sm:text-2xl">
                 {title}
               </h1>
             </div>
