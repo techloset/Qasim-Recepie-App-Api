@@ -37,10 +37,10 @@ const SliceCard: React.FC = () => {
 
 <h1 className='lg:text-3xl font-extrabold text-black md:text-2xl text-xl'>Popular Recipes</h1>
 
-      <div className=" grid grid-cols-1 m-5 place-content-center sm:grid-cols-2 md:m-5 md:grid-cols-3 lg:grid-cols-3 gap-8 my-4 place-items-center text-start">
+      <div className=" grid grid-cols-1 m-5 place-content-center sm:grid-cols-2 md:m-5 md:grid-cols-3 lg:grid-cols-3 gap-8 my-4 place-items-center text-start ">
         {recipes?.slice(0, 3).map((recipe) => (
           <div key={recipe.idMeal} className="p-2 rounded-full">
-            <div className="border-2 border-gray-200 border-opacity-60 rounded-3xl overflow-hidden object-contain">
+            <div className="border-2 border-gray-200 border-opacity-60 rounded-3xl overflow-hidden object-cover transition duration-300 hover:scale-105">
               <Link to={`/mel/${recipe.idMeal}`}>
                 <img
                   className="h-52 w-full object-cover md:h-full md:w-80 lg:h-64 rounded-s-3xl"
