@@ -7,7 +7,7 @@ import Navbar from './components/Header/Navbar';
 import SearchResultsPage from './pages/SearchResults';
 import RecipeDetails from './pages/RecepieDetails.';
 import Footer from './components/footer/Footer';
-import ErrorPage from './pages/ErrorPage';
+
 
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
         <Route path='' element={<HomePage />} />
         <Route path="/mel/:idCategory" element={<RecipeDetails />} />
         <Route path='/search' element={<SearchResultsPage />} />
-        <Route path='*' element={<ErrorPage />}  />
+       
       </Routes>
     <Footer />
 
