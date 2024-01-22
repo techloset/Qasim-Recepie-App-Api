@@ -16,7 +16,7 @@ function App() {
 
       <Navbar />
       <Routes>
-        <Route path='/home' element={<HomePage />} />
+        <Route path='' element={<HomePage />} />
         <Route path="/mel/:idCategory" element={<RecipeDetails />} />
         <Route path='/search' element={<SearchResultsPage />} />
         <Route path='*' element={<ErrorPage />}  />
