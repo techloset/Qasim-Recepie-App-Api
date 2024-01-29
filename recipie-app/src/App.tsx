@@ -15,6 +15,7 @@ function App() {
     <div className="App">
 
       <Navbar />
+
       <Routes>
         <Route path='' element={<HomePage />} />
         <Route path="/mel/:idCategory" element={<RecipeDetails />} />
@@ -22,7 +23,7 @@ function App() {
        
       </Routes>
     <Footer />
-
+  
 
 
 

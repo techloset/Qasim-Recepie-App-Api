@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRecipes } from '../store/slices/sliceCardSlice';
 import { RootState } from '../store/store';
-// import { Link } from 'react-router-dom';
+
 import { AnyAction, ThunkDispatch } from '@reduxjs/toolkit';
 
 const RecentlyView = () => {
@@ -46,24 +46,7 @@ const RecentlyView = () => {
               </div>
             </div>
           </div>
-          // <div key={recipe.idMeal} className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl lg:my-3 lg:py-3 transition duration-300 hover:scale-105 py-6 my-9 ">
-          //   <div className="md:flex  object-cover">
-          //     <div className="md:shrink-0">
-          //       <img
-          //         className="h-full  object-cover md:h-full w-48 "
-          //         src={recipe.strMealThumb}
-          //         alt={recipe.strMeal || 'Recipe Image'}
-          //       />
-          //     </div>
-          //     <div className="p-8 m-4 rounded-3xl ">
-          //       <div className="uppercase tracking-wide text-2xl font-semibold">
-          //         <h1 className="title-font text-2xl text-center font-semibold ">{recipe.strMeal.slice(0, 10)}</h1>
-          //       </div>
-
-          //       
-          //     </div>
-          //   </div>
-          // </div>
+          
         )).slice(0, 4)}
       </div>
 

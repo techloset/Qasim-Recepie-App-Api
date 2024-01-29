@@ -27,7 +27,6 @@ const SearchResultsPage: React.FC = () => {
     };
 
 
-    console.log(searchResults);
 
 
     return (
