@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../../assets/logo.png';
-import hamburger from '../../assets/Vector (2).png';
-import closeHamburger from '../../assets/icons8-multiply-32.png';
-import icon from '../../assets/Icon.png';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import logo from "../../assets/logo.png";
+import hamburger from "../../assets/Vector (2).png";
+import closeHamburger from "../../assets/icons8-multiply-32.png";
+import icon from "../../assets/Icon.png";
 
 interface NavLink {
   name: string;
@@ -18,9 +18,9 @@ const Navbar: React.FC = () => {
   };
 
   const navLinks: NavLink[] = [
-    { name: 'Home', link: '/home' },
-    { name: 'Receitas', link: '/about' },
-    { name: 'Sobre nós', link: '/contact' },
+    { name: "Home", link: "/home" },
+    { name: "Receitas", link: "/about" },
+    { name: "Sobre nós", link: "/contact" },
   ];
 
   return (
@@ -30,25 +30,24 @@ const Navbar: React.FC = () => {
       </div>
       <nav className="w-full h-full bg-white-100 flex justify-between px-5 md:px-4 my-4">
         <div className="flex justify-between text-xl font-bold items-center">
-          <Link to="/home">
-            <img className="m-3 w-9" src={logo} alt="Logo" />
-          </Link>
+          <img className="m-3 w-9 cursor-pointer" src={logo} alt="Logo" />
+
           <span className="md:flex hidden">Delícias à Mesa</span>
         </div>
 
         <ul className="md:flex hidden font-semibold m-3">
           {navLinks.map((link) => (
-            <li className="mx-3" key={link.name}>
-              <Link className="font-semibold text-xl" to={link.link}>
-                {link.name}
-              </Link>
+            <li className="mx-3 cursor-pointer" key={link.name}>
+              {/* <Link className="font-semibold text-xl" to={link.link}> */}
+              {link.name}
+              {/* </Link> */}
             </li>
           ))}
         </ul>
 
         <div className="md:flex hidden ">
           <Link to="/search">
-            <img className='m-3 w-6' src={icon} alt="Search" />
+            <img className="m-3 w-6" src={icon} alt="Search" />
           </Link>
         </div>
 

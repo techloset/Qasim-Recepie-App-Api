@@ -10,6 +10,7 @@ interface Meal {
 interface SearchState {
   searchResults: Meal[] | null;
   status: string;
+  selectedCard: Meal | null;
   error: string | null;
 }
 
@@ -20,7 +21,7 @@ export const fetchSearchResults = createAsyncThunk(
       const response = await axios.get(
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
       );
-      console.log("API Response:", response.data);
+      // console.log("API Response:", response.data);
       return response.data.meals || [];
     } catch (error) {
       return thunkAPI.rejectWithValue("Error fetching search results");
@@ -33,9 +34,17 @@ const searchSlice = createSlice({
   initialState: {
     searchResults: null,
     status: "idle",
+    selectedCard: null,
     error: null,
   } as SearchState,
-  reducers: {},
+  reducers: {
+    selectCard: (state, action) => {
+      state.selectedCard = action.payload;
+    },
+    clearSelectedCard: (state) => {
+      state.selectedCard = null;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchSearchResults.pending, (state) => {
