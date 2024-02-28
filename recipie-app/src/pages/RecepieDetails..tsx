@@ -4,6 +4,7 @@ import { fetchRecipeDetails } from "../store/slices/sliceRecepieDetail";
 import { RootState } from "../store/store";
 import { AnyAction, ThunkDispatch } from "@reduxjs/toolkit";
 import { useParams } from "react-router-dom";
+import Footer from "../components/footer/Footer";
 
 type RouteParams = {
   idCategory: string;
@@ -122,6 +123,9 @@ const RecipeDetails: React.FC = () => {
               ))}
           </ol>
         </div>
+      </div>
+      <div className="my-4 relative top-20">
+        <Footer />
       </div>
     </div>
   );

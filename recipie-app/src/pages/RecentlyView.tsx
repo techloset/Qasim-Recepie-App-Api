@@ -26,7 +26,7 @@ const RecentlyView = () => {
               key={recipe.idMeal}
               className="max-w-md mx-auto bg-stone-100 rounded-xl shadow-md overflow-hidden md:max-w-4xl  my-9 transition duration-300 hover:scale-105"
             >
-              <div className="md:flex md:mx-5">
+              <div className="md:flex md:mx-5j">
                 <div className="md:shrink-0">
                   <Link to={`/mel/${recipe.idMeal}`}>
                     <img

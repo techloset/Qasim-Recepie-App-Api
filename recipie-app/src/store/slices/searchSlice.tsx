@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+
+import axiosInstance from "../../instance/AxiosInstance";
 
 interface Meal {
   idMeal: string;
@@ -18,7 +19,7 @@ export const fetchSearchResults = createAsyncThunk(
   "search/fetchSearchResults",
   async (query: string, thunkAPI) => {
     try {
-      const response = await axios.get(
+      const response = await axiosInstance.get(
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
       );
       // console.log("API Response:", response.data);
