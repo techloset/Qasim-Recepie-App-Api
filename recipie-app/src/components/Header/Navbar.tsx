@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Images from "../../constant/Images";
-// import logo from "../../assets/logo.svg";
-// import hamburger from "../../assets/Vector (2).svg";
-// import closeHamburger from "../../assets/icons8-multiply-32.svg";
-// import icon from "../../assets/Icon.svg";
-
+import Images from "../../constant/images";
 interface NavLink {
   name: string;
   link: string;
@@ -43,9 +38,7 @@ const Navbar: React.FC = () => {
         <ul className="md:flex hidden font-semibold m-3">
           {navLinks.map((link) => (
             <li className="mx-3 cursor-pointer" key={link.name}>
-              {/* <Link className="font-semibold text-xl" to={link.link}> */}
               {link.name}
-              {/* </Link> */}
             </li>
           ))}
         </ul>

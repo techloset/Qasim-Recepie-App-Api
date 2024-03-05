@@ -5,7 +5,7 @@ import { RootState } from "../store/store";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AnyAction, ThunkDispatch } from "@reduxjs/toolkit";
 import Footer from "../components/footer/Footer";
-import Images from "../constant/Images";
+import Images from "../constant/images";
 
 const SearchResultsPage: React.FC = () => {
   const navigate = useNavigate();
@@ -30,9 +30,8 @@ const SearchResultsPage: React.FC = () => {
     if (query.trim() !== "") {
       try {
         await dispatch(fetchSearchResults(query.trim()));
-      } catch (error) {
-        // Handle error
-      }
+      } catch (error) {}
+
       navigate(`/search?q=${encodeURIComponent(query.trim())}`, {
         state: { query: query.trim() },
       });

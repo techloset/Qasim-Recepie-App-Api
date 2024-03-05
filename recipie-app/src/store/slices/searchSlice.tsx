@@ -22,7 +22,7 @@ export const fetchSearchResults = createAsyncThunk(
       const response = await axiosInstance.get(
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
       );
-      // console.log("API Response:", response.data);
+
       return response.data.meals || [];
     } catch (error) {
       return thunkAPI.rejectWithValue("Error fetching search results");

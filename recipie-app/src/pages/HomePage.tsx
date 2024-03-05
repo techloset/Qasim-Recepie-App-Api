@@ -1,9 +1,9 @@
 import React from "react";
-import Banner from "../components/Header/Banner";
+import Banner from "../components/header/Banner";
 
 import SliceCard from "../components/homeCards/HomeCards";
 import RecentlyView from "./RecentlyView";
-import Images from "../constant/Images";
+import Images from "../constant/images";
 
 const HomePage = () => {
   return (

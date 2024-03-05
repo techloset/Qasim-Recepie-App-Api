@@ -1,5 +1,5 @@
 import React from "react";
-import Images from "../../constant/Images";
+import Images from "../../constant/images";
 
 const Footer = () => {
   return (
